@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Models\MunicipalityModel;
+use App\Models\ProductModel;
 
-class MunicipalityController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +15,13 @@ class MunicipalityController extends Controller
      */
     public function index()
     {
-        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Municipios/');
+        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ProductosPetroliferos/');
         $data=$response->json();
         foreach ($data as $register) {
-            MunicipalityModel::create([
-                'name'=>$register['Municipio'],
-                'id'=>$register['IDMunicipio'],
-                'province_id'=>$register['IDProvincia'],
-                
+            ProductModel::create([
+                'name'=>$register['NombreProducto'],
+                'id'=>$register['IDProducto'],
+                'abbr_name'=>$register['NombreProductoAbreviatura'],
             ]);
         }
     }

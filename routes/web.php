@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\AutonomousCommunityController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\MunicipalityController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FuelStationController;
+use App\Http\Controllers\MaritimePoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +25,8 @@ use App\Http\Controllers\ProvinceController;
 // });
 Route::get('/',[AutonomousCommunityController::class,'index']);
 Route::get('/',[ProvinceController::class,'index']);
+Route::get('/',[MunicipalityController::class,'index']);
+Route::get('/',[ProductController::class,'index']);
+Route::get('/',[FuelStationController::class,'index']);
+Route::get('/',[MaritimePoleController::class,'index']);
 

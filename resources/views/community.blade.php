@@ -1,4 +1,5 @@
 <table>
+    {{dd($data)}}
 <tr>
     <th>id</th>
     <th>nombre</th>

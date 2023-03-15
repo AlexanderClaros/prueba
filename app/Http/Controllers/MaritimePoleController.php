@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Models\MunicipalityModel;
+use App\Models\MaritimePoleModel;
 
-class MunicipalityController extends Controller
+class MaritimePoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,26 @@ class MunicipalityController extends Controller
      */
     public function index()
     {
-        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Municipios/');
+        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/');
         $data=$response->json();
-        foreach ($data as $register) {
-            MunicipalityModel::create([
-                'name'=>$register['Municipio'],
-                'id'=>$register['IDMunicipio'],
-                'province_id'=>$register['IDProvincia'],
+        foreach ($data['ListaEESSPrecio'] as $register) {
+            MaritimePoleModel::create([
+                
+                'id'=>$register['IDPosteMaritimo'],
+                'locality'=>$register['Localidad'],
+                'port'=>$register['Puerto'],
+                'address'=>$register['Dirección'],
+                'postal_code'=>$register['C.P.'],
+                'rotulo'=>$register['Rótulo'],
+                'working_hours'=>$register['Horario'],
+                'lat'=>$register['Latitud'],
+                'long'=>$register['Longitud (WGS84)'],
+                'diesel_oil_a'=>$register['Precio Gasoleo A habitual'],
+                'diesel_oil_b'=>$register['Precio Gasoleo B'],
+                'maritime_diesel'=>$register['Precio Gasóleo para uso marítimo'],
+                'gas_95_e10'=>$register['Precio Gasolina 95 E10'],
+                'gas_95_e5'=>$register['Precio Gasolina 95 E5'],
+                'municipality_id'=>$register['IDMunicipio'],
                 
             ]);
         }
