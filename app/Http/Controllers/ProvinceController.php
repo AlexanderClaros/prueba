@@ -4,27 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Models\AutonomousCommunityModel;
+use App\Models\ProvinceModel;
 
-
-class AutonomousCommunityController extends Controller
+class ProvinceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        
-        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/');
+    public function index()
+    {
+        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/');
         $data=$response->json();
         foreach ($data as $register) {
-            AutonomousCommunityModel::create([
-                'name'=>$register['CCAA'],
-                'id'=>$register['IDCCAA'],
+            ProvinceModel::create([
+                'name'=>$register['Provincia'],
+                'id'=>$register['IDPovincia'],
+                'community_id'=>$register['IDCCAA'],
             ]);
         }
-        return view('community',compact('data'));
     }
 
     /**
@@ -45,7 +44,7 @@ class AutonomousCommunityController extends Controller
      */
     public function store(Request $request)
     {
-  
+        //
     }
 
     /**
