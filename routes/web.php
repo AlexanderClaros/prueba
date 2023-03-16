@@ -23,7 +23,16 @@ use App\Http\Controllers\MaritimePoleController;
 // Route::get('/', function () {
 //     return view('index');
 // });
-Route::get('/',[MaritimePoleController::class,'index']);
+Route::get('/',[FuelStationController::class,'index']);
+Route::get('/fuelStation',[FuelStationController::class,'index']);
+Route::get('/mapa', function () {
+       return view('map');
+     });
+
+
+Route::get('/edit/{id}',[FuelStationController::class,'edit']);
+Route::get('/update/{id}',[FuelStationController::class,'update']);
+Route::get('/destroy/{id}',[FuelStationController::class,'destroy']);
 // Route::get('/',[ProvinceController::class,'index']);
 // Route::get('/',[MunicipalityController::class,'index']);
 // Route::get('/',[ProductController::class,'index']);

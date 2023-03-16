@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                 @foreach($data as $register)
-                    <tr>
+                    <tr id="{{$register['id']}}" >
                         <td>{{$register['rotulo']}}</td>
                         <td>{{$register['port']}}</td>
                         <td>{{$register['locality']}}</td>

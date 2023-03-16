@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 @foreach($data as $register)
-                    <tr>
+                    <tr  id="{{$register['id']}}">
                         <td>{{$register['rotulo']}}</td>
                         <td>{{$register['locality']}}</td>
                         <td>{{$register['address']}}</td>
@@ -24,12 +24,18 @@
                         <td>{{$register['gas_95_e5']}}</td>
                         <td>{{$register['gas_98_e5']}}</td>
                         <td>{{$register['working_hours']}}</td>
-                        {{
-                        $lat=$register['lat'];
-                        $long=$register['long'];
-                        
-                        }}
-                        <td><a href="/mapa"><img src="" alt="no disponible"></a></td>
+                        <td>  
+                            <a href="/edit/{{$register['id']}}" class="btn btn-primary">editar</a>
+                        </td>
+                        <td>
+                            <form action="/destroy/{{$register['id']}}" method="get">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                              </form>
+                        </td>
+
+                        <td><a href="/mapa"><img src="" alt="icono no disponible"></a></td>
                     </tr>
                 @endforeach
             </tbody>

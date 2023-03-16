@@ -95,7 +95,8 @@ class FuelStationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit=FuelStationModel::find($id);
+        return view('fuelStationEdit',compact('edit'));
     }
 
     /**
@@ -107,7 +108,28 @@ class FuelStationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'locality'=>'required',
+            'address'=>'required',
+            'diesel_a'=>'max:5',
+            'diesel_premium'=>'max:5',
+            'gas_95_e5'=>'max:5',
+            'gas_98_e5'=>'max:5',
+            'hours'=>'required'
+        ]); 
+        $edit = FuelStationModel::find($id);
+       
+        $edit['rotulo'] =  $request->get('name');
+        $edit['locality'] = $request->get('locality');
+        $edit['address'] = $request->get('address');
+        $edit['diesel_oil_a'] =  $request->get('diesel_a');
+        $edit['diesel_oil_premium'] = $request->get('diesel_premium');
+        $edit['gas_95_e5'] = $request->get('gas_95_e5');
+        $edit['gas_98_e5'] = $request->get('gas_98_e5');
+        $edit['working_hours'] = $request->get('hours');
+        $edit->save();
+        return redirect('/fuelStation');
     }
 
     /**
@@ -118,6 +140,8 @@ class FuelStationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroy = FuelStationModel::find($id);
+        $destroy->delete();
+        return redirect('/fuelStation');
     }
 }
