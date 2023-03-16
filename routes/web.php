@@ -20,13 +20,13 @@ use App\Http\Controllers\MaritimePoleController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-Route::get('/',[AutonomousCommunityController::class,'index']);
-// Route::get('/',[ProvinceController::class,'index']);
-// Route::get('/',[MunicipalityController::class,'index']);
+ Route::get('/', function () {
+     return view('index'); 
+    });
+//Route::get('/',[AutonomousCommunityController::class,'index']);
+ //Route::get('/',[ProvinceController::class,'index']);
+ //Route::get('/',[MunicipalityController::class,'index']);
 // Route::get('/',[ProductController::class,'index']);
-// Route::get('/',[FuelStationController::class,'index']);
-// Route::get('/',[MaritimePoleController::class,'index']);
+ //Route::get('/',[FuelStationController::class,'index']);
+ //Route::get('/',[MaritimePoleController::class,'index']);
 
