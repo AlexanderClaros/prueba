@@ -16,15 +16,8 @@ class AutonomousCommunityController extends Controller
      */
     public function index(){
         
-        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/');
-        $data=$response->json();
-        foreach ($data as $register) {
-            AutonomousCommunityModel::create([
-                'name'=>$register['CCAA'],
-                'id'=>$register['IDCCAA'],
-            ]);
-        }
-        return view('community',compact('data'));
+        $data = AutonomousCommunityModel::all();
+        return view('community',['data'=>$data]);
     }
 
     /**
@@ -45,7 +38,14 @@ class AutonomousCommunityController extends Controller
      */
     public function store(Request $request)
     {
-  
+        $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/');
+        $data=$response->json();
+        foreach ($data as $register) {
+            AutonomousCommunityModel::create([
+                'name'=>$register['CCAA'],
+                'id'=>$register['IDCCAA'],
+            ]);
+        }
     }
 
     /**

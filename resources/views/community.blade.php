@@ -1,13 +1,19 @@
-<table>
-    {{dd($data)}}
-<tr>
-    <th>id</th>
-    <th>nombre</th>
-</tr>    
-@foreach($data as $register)
-    <tr>
-        <td>{{$register['IDCCAA']}}</td>
-        <td>{{$register['CCAA']}}</td>
-    </tr>
-@endforeach
-</table>
+@extends('index')
+    @section('content')
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                </tr>    
+            </thead>
+            <tbody>
+                @foreach($data as $register)
+                    <tr>
+                        <td>{{$register['id']}}</td>
+                        <td>{{$register['name']}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endsection
