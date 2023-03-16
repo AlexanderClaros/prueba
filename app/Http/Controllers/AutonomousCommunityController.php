@@ -19,7 +19,7 @@ class AutonomousCommunityController extends Controller
         $data = AutonomousCommunityModel::all();
         return view('community',['data'=>$data]);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *

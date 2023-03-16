@@ -15,6 +15,13 @@ class FuelStationController extends Controller
      */
     public function index()
     {
+        
+        $data = FuelStationModel::all();
+        return view('fuelStation',['data'=>$data]);
+        
+    }
+    public function upInfoDB()
+    {
         $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/');
         $data=$response->json();
         foreach ($data['ListaEESSPrecio'] as $register) {
@@ -46,6 +53,7 @@ class FuelStationController extends Controller
             ]);
         }
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -76,7 +84,7 @@ class FuelStationController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

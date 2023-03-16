@@ -15,6 +15,13 @@ class MaritimePoleController extends Controller
      */
     public function index()
     {
+          
+        $data = MaritimePoleModel::all();
+        return view('fuelStation',['data'=>$data]);
+        
+    }
+    public function upInfoDB()
+    {
         $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/PostesMaritimos/');
         $data=$response->json();
         foreach ($data['ListaEESSPrecio'] as $register) {
