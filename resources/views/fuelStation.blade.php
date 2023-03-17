@@ -40,4 +40,5 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="/create" class="btn btn-primary">Crear</a>
     @endsection
