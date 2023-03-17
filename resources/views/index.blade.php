@@ -7,6 +7,7 @@
         <link href="/dist/output.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/app.css">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     </head>
 
@@ -28,6 +29,23 @@
             .link-underline:hover {
                 background-size: 100% 3px;
                 background-position: 0 100%
+            }
+
+            .left-full {
+            left: -100%;
+            }
+
+            .carousel-item {
+            float: left;
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-right: -100%;
+            backface-visibility: hidden;
+            }
+
+            .carousel-item.active {
+            left: 0;
             }
         </style>
 
@@ -70,7 +88,12 @@
 
 	    </nav>
 
-        <!--<div><img src="C:\Users\ptmarketing05\Documents\GitHub\prueba\resources\assets"></div>-->
+        <div>@yield('content')</div>
+
+        <div><img src="{{asset('assets/foto.jpg')}}" alt=""></div>
+
+
+        
 
 
 
