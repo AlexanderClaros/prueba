@@ -20,13 +20,32 @@ use App\Http\Controllers\MaritimePoleController;
 |
 */
 
- Route::get('/', function () {
-     return view('index'); 
-    });
-//Route::get('/',[AutonomousCommunityController::class,'index']);
- //Route::get('/',[ProvinceController::class,'index']);
- //Route::get('/',[MunicipalityController::class,'index']);
+
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/',[MaritimePoleController::class,'index']);
+Route::get('/fuelStation',[FuelStationController::class,'index']);
+Route::get('/maritimePole',[MaritimePoleController::class,'index']);
+Route::get('/mapa', function () {
+       return view('map');
+     });
+
+
+Route::get('/edit/{id}',[FuelStationController::class,'edit']);
+Route::get('/update/{id}',[FuelStationController::class,'update']);
+Route::get('/destroy/{id}',[FuelStationController::class,'destroy']);
+Route::get('/create',[FuelStationController::class,'create']);
+Route::get('/store',[FuelStationController::class,'store']);
+Route::get('/editPole/{id}',[MaritimePoleController::class,'edit']);
+Route::get('/updatePole/{id}',[MaritimePoleController::class,'update']);
+Route::get('/destroyPole/{id}',[MaritimePoleController::class,'destroy']);
+Route::get('/createPole',[MaritimePoleController::class,'create']);
+Route::get('/storePole',[MaritimePoleController::class,'store']);
+// Route::get('/',[ProvinceController::class,'index']);
+// Route::get('/',[MunicipalityController::class,'index']);
 // Route::get('/',[ProductController::class,'index']);
- //Route::get('/',[FuelStationController::class,'index']);
- //Route::get('/',[MaritimePoleController::class,'index']);
+//Route::get('/upInfoDB',[FuelStationController::class,'upInfoDB']);
+//Route::get('/upInfoDB',[MaritimePoleController::class,'upInfoDB']);
+
 
