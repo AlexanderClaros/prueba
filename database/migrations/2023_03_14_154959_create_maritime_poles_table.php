@@ -23,11 +23,11 @@ return new class extends Migration
             $table->string('working_hours');
             $table->string('lat');
             $table->string('long');
-            $table->string('diesel_oil_a');
-            $table->string('diesel_oil_b');
-            $table->string('maritime_diesel');
-            $table->string('gas_95_e10');
-            $table->string('gas_95_e5');
+            $table->string('diesel_oil_a')->nullable();
+            $table->string('diesel_oil_b')->nullable();
+            $table->string('maritime_diesel')->nullable();
+            $table->string('gas_95_e10')->nullable();
+            $table->string('gas_95_e5')->nullable();
 
             $table->unsignedBigInteger('municipality_id');
             $table->foreign('municipality_id')->references('id')->on('municipality');

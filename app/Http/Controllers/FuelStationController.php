@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\FuelStationModel;
+use App\Models\MunicipalityModel;
+use App\Models\ProvinceModel;
 
 class FuelStationController extends Controller
 {
@@ -14,6 +16,13 @@ class FuelStationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        
+        $data = FuelStationModel::all();
+        return view('fuelStation',['data'=>$data]);
+        
+    }
+    public function upInfoDB()
     {
         $response = Http::get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/');
         $data=$response->json();
@@ -45,7 +54,9 @@ class FuelStationController extends Controller
                 'municipality_id'=>$register['IDMunicipio'],
             ]);
         }
+        return view('fuelStation',['data'=>$data]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -54,7 +65,9 @@ class FuelStationController extends Controller
      */
     public function create()
     {
-        //
+        $data = MunicipalityModel::all();
+        $data2 = ProvinceModel::all();
+        return view('fuelStationCreate',['data'=>$data],['data2'=>$data2]);
     }
 
     /**
@@ -65,7 +78,34 @@ class FuelStationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+
+        $fuelStation = new FuelStationModel([
+            'rotulo'=>$request->get('name'),
+            'locality'=>$request->get('locality'),
+            'address'=>$request->get('address'),
+            'diesel_oil_a'=>$request->get('diesel_a'),
+            'diesel_oil_premium'=>$request->get('diesel_premium'),
+            'gas_95_e5'=>$request->get('gas_95_e5'),
+            'gas_98_e5'=>$request->get('gas_98_e5'),
+            'working_hours'=>$request->get('hours'),
+            'postal_code'=>$request->get('postalCode'),
+            'lat'=>$request->get('lat'),
+            'long'=>$request->get('long'),
+            'biodiesel'=>$request->get('biodiesel'),
+            'bioetanol'=>$request->get('bioetanol'),
+            'liquefied_natural_gas'=>$request->get('naturalGaslic'),
+            'compressed_natural_gas'=>$request->get('naturalGasComp'),
+            'liquefied_petroleum_gases'=>$request->get('petroleumGas'),
+            'diesel_oil_b'=>$request->get('diesel_b'),
+            'gas_95_e10'=>$request->get('gas_95_e10'),
+            'gas_95_e5_premium'=>$request->get('gas_95_e5_premium'),
+            'gas_98_e10'=>$request->get('gas_98_e10'),
+            'hydrogen'=>$request->get('hydrogen'),
+            'municipality_id'=>$request->get('municipality')
+        ]);
+        $fuelStation->save();
+        return redirect('/fuelStation');
     }
 
     /**
@@ -76,7 +116,8 @@ class FuelStationController extends Controller
      */
     public function show($id)
     {
-        //
+       
+       
     }
 
     /**
@@ -87,7 +128,8 @@ class FuelStationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit=FuelStationModel::find($id);
+        return view('fuelStationEdit',compact('edit'));
     }
 
     /**
@@ -99,7 +141,28 @@ class FuelStationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'locality'=>'required',
+            'address'=>'required',
+            'diesel_a'=>'max:5',
+            'diesel_premium'=>'max:5',
+            'gas_95_e5'=>'max:5',
+            'gas_98_e5'=>'max:5',
+            'hours'=>'required'
+        ]); 
+        $edit = FuelStationModel::find($id);
+       
+        $edit['rotulo'] =  $request->get('name');
+        $edit['locality'] = $request->get('locality');
+        $edit['address'] = $request->get('address');
+        $edit['diesel_oil_a'] =  $request->get('diesel_a');
+        $edit['diesel_oil_premium'] = $request->get('diesel_premium');
+        $edit['gas_95_e5'] = $request->get('gas_95_e5');
+        $edit['gas_98_e5'] = $request->get('gas_98_e5');
+        $edit['working_hours'] = $request->get('hours');
+        $edit->save();
+        return redirect('/fuelStation');
     }
 
     /**
@@ -110,6 +173,8 @@ class FuelStationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroy = FuelStationModel::find($id);
+        $destroy->delete();
+        return redirect('/fuelStation');
     }
 }
