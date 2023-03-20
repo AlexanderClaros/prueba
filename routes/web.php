@@ -21,10 +21,10 @@ use App\Http\Controllers\MaritimePoleController;
 */
 
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-Route::get('/',[MaritimePoleController::class,'index']);
+ Route::get('/', function () {
+     return view('index');
+ });
+//Route::get('/',[MaritimePoleController::class,'index']);
 Route::get('/fuelStation',[FuelStationController::class,'index']);
 Route::get('/maritimePole',[MaritimePoleController::class,'index']);
 Route::get('/mapa', function () {

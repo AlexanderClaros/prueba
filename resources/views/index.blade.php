@@ -36,18 +36,7 @@
             left: -100%;
             }
 
-            .carousel-item {
-            float: left;
-            position: relative;
-            display: block;
-            width: 100%;
-            margin-right: -100%;
-            backface-visibility: hidden;
-            }
-
-            .carousel-item.active {
-            left: 0;
-            }
+         
         </style>
 
     <body class="bg-gray-400">
@@ -70,15 +59,11 @@
             <ul class="md:float-right md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto">
 
                 <li class="mx-4 my-6 md:my-0">
-                    <a href="#" class="link link-underline link-underline-orange font-display font-sans-serif max-w-sm leading-tight text-base text-white">ESTACIONES DE SERVICIO</a>
+                    <a href="/fuelStation" class="link link-underline link-underline-orange font-display font-sans-serif max-w-sm leading-tight text-base text-white">ESTACIONES DE SERVICIO</a>
                 </li>
 
                 <li class="mx-4 my-6 md:my-0">
-                    <a href="#" class="link link-underline link-underline-orange font-display font-sans-serif max-w-sm leading-tight text-base text-white">POSTES MARITIMOS</a>
-                </li>
-
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="#" class="link link-underline link-underline-orange font-display font-sans-serif max-w-sm leading-tight text-base text-white">NOSOTROS</a>
+                    <a href="/maritimePole" class="link link-underline link-underline-orange font-display font-sans-serif max-w-sm leading-tight text-base text-white">POSTES MARITIMOS</a>
                 </li>
 
                 <button class="bg-gray-600 text-white font-display max-w-sm text-base font-sans-serif leading-tight px-5 py-2 mx-4 hover:bg-gray-700 rounded">
