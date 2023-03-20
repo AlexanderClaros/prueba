@@ -1,12 +1,14 @@
 
 <!doctype html>
+
 <html>
+
     <head>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/dist/output.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/app.css">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -14,23 +16,23 @@
 
         <!--animacion underline-->
         <style>
-            .link-underline {
-                border-bottom-width: 0;
-                background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
-                background-size: 0 3px;
-                background-position: 0 100%;
-                background-repeat: no-repeat;
-                transition: .5s ease-in-out;
-            }
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: .5s ease-in-out;
+}
 
-            .link-underline-orange {
-                background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(251 146 60 / 0.75), rgb(251 146 60 / 0.75))
-            }
+.link-underline-orange {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(251 146 60 / 0.75), rgb(251 146 60 / 0.75));
+}
 
-            .link-underline:hover {
-                background-size: 100% 3px;
-                background-position: 0 100%
-            }
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+}
 
             .left-full {
             left: -100%;
@@ -39,9 +41,9 @@
          
         </style>
 
-    <body class="bg-gray-400">
+    <body class="bg-[url('assets/foto.jpg')] bg-no-repeat bg-fixed">
 
-        <nav class="p-5 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-800 via-slate-700 to-gray-800 shadow md:flex md:items-center md:justify-between">
+        <nav class=" sticky top-0 p-5 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-800 via-slate-700 to-gray-800 shadow md:flex md:items-center md:justify-between">
 
             <div class="md:max-w-xs md:flex md:space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="text-orange-400/75 md:mt-1 bi bi-fuel-pump" viewBox="0 0 16 16">
@@ -74,17 +76,17 @@
 
 	    </nav>
 
+
+
+        <!--<div><img src="{{asset('assets/foto.jpg')}}" alt=""></div>-->
+
+
         <div>@yield('content')</div>
 
-        <div><img src="{{asset('assets/foto.jpg')}}" alt=""></div>
-
-
-        
 
 
 
-
-        <footer class="bg-white dark:bg-gray-900">
+        <footer class="bg-white dark:bg-gray-800 mt-2">
 
             <div class="mx-auto w-full container p-4 sm:p-6">
 
