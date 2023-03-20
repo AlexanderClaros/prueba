@@ -47,5 +47,6 @@ Route::get('/storePole',[MaritimePoleController::class,'store']);
 // Route::get('/',[ProductController::class,'index']);
 //Route::get('/upInfoDB',[FuelStationController::class,'upInfoDB']);
 //Route::get('/upInfoDB',[MaritimePoleController::class,'upInfoDB']);
+//Route::get('/upInfoDB',[AutonomousCommunityController::class,'index']);
 
 
