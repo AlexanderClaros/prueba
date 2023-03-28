@@ -131,6 +131,11 @@ class FuelStationController extends Controller
         $edit=FuelStationModel::find($id);
         return view('fuelStationEdit',compact('edit'));
     }
+    public function mapa($id)
+    {
+        $edit=FuelStationModel::find($id);
+        return view('map',compact('edit'));
+    }
 
     /**
      * Update the specified resource in storage.

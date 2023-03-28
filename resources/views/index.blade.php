@@ -10,7 +10,8 @@
         <link href="/dist/output.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"> </script> 
+        
 
     </head>
 
@@ -75,81 +76,11 @@
 
 	    </nav>
 
-        <div class="container flex flex-wrap items-start mt-8 mx-auto">
+        
 
-            <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
-                <h1 class="text-3xl font-extrabold text-white text-center"> SERVICIOS DESTACADOS </h1>
-            </div>
+        <div id ='app'>@yield('content')</div>
 
-            <div class="w-full mx-auto md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 mr-2">
-
-                <a href="/fuelStation">
-
-                    <div class="bg-gray-600 rounded-lg m-h-64 p-2 transform hover:-translate-y-2 hover:shadow-xl transition duration-300">
-
-                        <figure class="mb-2"><img src="https://cdn-icons-png.flaticon.com/512/8940/8940365.png " alt="" class="h-64 ml-auto mr-auto" /></figure>
-
-                        <div class="rounded-lg p-4 flex flex-col">
-
-                            <div>
-
-                                <h5 class="text-2xl font-bold text-white leading-none text-center"> Estaciones de Servicio </h5>
-
-                                <p class="mt-4 text-white text-justify">
-                                    Establecimientos dedicados a la venta al público de productos derivados del petróleo a granel y mediante surtidores. 
-                                    Generalmente se ubican en puntos convenientes de zonas urbanas y próximas a las carreteras, y en ellas, 
-                                    es posible parar y repostar el combustible de los vehículos, además de regular la presión de los neumáticos, 
-                                    el agua de refrigeración u otros elementos mecánicos.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-            <div class="w-full mx-auto md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2 ml-2">
-
-                <a href="/maritimePole">
-
-                    <div class="bg-gray-600 rounded-lg m-h-64 p-2 transform hover:-translate-y-2 hover:shadow-xl transition duration-300">
-
-                        <figure class="mb-2"><img src="https://cdn-icons-png.flaticon.com/512/8552/8552053.png" alt="" class="h-64 ml-auto mr-auto" /></figure>
-
-                        <div class="rounded-lg p-4 flex flex-col">
-
-                            <div>
-
-                                <h5 class="text-2xl font-bold text-white leading-none text-center"> Postes Marítimos </h5>
-
-                                <p class="mt-4 text-white text-justify">
-                                    Puntos de suministro de combustible en puertos y terminales maritimas. 
-                                    Estos postes marítimos se utilizan para transferir grandes cantidades de combustible 
-                                    desde buques cisterna a tanques de almacenamiento terrestre o para cargar directamente 
-                                    combustible en barcos y otras embarcaciones. Suele estar equipados con mangueras y conexiones 
-                                    para transferir de forma segura y eficiente del combustible.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-        <div>@yield('content')</div>
-
-        <footer class="bg-white dark:bg-gray-800 mt-2">
+        <footer class="bg-gray-800 mt-2">
 
             <div class="mx-auto w-full container p-4 sm:p-6">
 
@@ -162,7 +93,7 @@
                             <path d="M1 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1 2 2v.5a.5.5 0 0 0 1 0V8h-.5a.5.5 0 0 1-.5-.5V4.375a.5.5 0 0 1 .5-.5h1.495c-.011-.476-.053-.894-.201-1.222a.97.97 0 0 0-.394-.458c-.184-.11-.464-.195-.9-.195a.5.5 0 0 1 0-1c.564 0 1.034.11 1.412.336.383.228.634.551.794.907.295.655.294 1.465.294 2.081v3.175a.5.5 0 0 1-.5.501H15v4.5a1.5 1.5 0 0 1-3 0V12a1 1 0 0 0-1-1v4h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V2Zm9 0a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v13h8V2Z"/>
                         </svg>
 
-                        <a href="#" class="flex items-center"><span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Geoportal</span></a>
+                        <a href="#" class="flex items-center"><span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Geoportal</span></a>
 
                     </div>
 
@@ -170,7 +101,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Resources</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline">Geportal</a></li>
@@ -181,7 +112,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Follow us</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline ">Github</a></li>
@@ -192,7 +123,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Legal</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline">Privacy Policy</a></li>
@@ -250,7 +181,7 @@
             </div>
 
         </footer>
-
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </body>
 
 </html>

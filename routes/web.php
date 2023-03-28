@@ -22,7 +22,7 @@ use App\Http\Controllers\MaritimePoleController;
 
 
  Route::get('/', function () {
-     return view('index');
+     return view('inicio');
  });
 //Route::get('/',[MaritimePoleController::class,'index']);
 Route::get('/fuelStation',[FuelStationController::class,'index']);
@@ -32,6 +32,8 @@ Route::get('/mapa', function () {
      });
 
 
+Route::get('/mapaControllerMar/{id}',[MaritimePoleController::class,'mapa']);
+Route::get('/mapaController/{id}',[FuelStationController::class,'mapa']);
 Route::get('/edit/{id}',[FuelStationController::class,'edit']);
 Route::get('/update/{id}',[FuelStationController::class,'update']);
 Route::get('/destroy/{id}',[FuelStationController::class,'destroy']);

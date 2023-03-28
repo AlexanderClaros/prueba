@@ -113,6 +113,11 @@ class MaritimePoleController extends Controller
         $edit=MaritimePoleModel::find($id);
         return view('maritimePoleEdit',compact('edit'));
     }
+    public function mapa($id)
+    {
+        $edit=MaritimePoleModel::find($id);
+        return view('map',compact('edit'));
+    }
 
     /**
      * Update the specified resource in storage.
