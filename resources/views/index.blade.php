@@ -15,32 +15,6 @@
 
     </head>
 
-    <!--animacion-->
-    <style>
-        .link-underline {
-            border-bottom-width: 0;
-            background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
-            background-size: 0 3px;
-            background-position: 0 100%;
-            background-repeat: no-repeat;
-            transition: .5s ease-in-out;
-        }
-
-        .link-underline-orange {
-            background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(251 146 60 / 0.75), rgb(251 146 60 / 0.75));
-        }
-
-        .link-underline:hover {
-            background-size: 100% 3px;
-            background-position: 0 100%
-        }
-
-        .left-full {
-        left: -100%;
-        }
-
-    </style>
-
     <body class="bg-[url('assets/foto.jpg')] bg-no-repeat bg-fixed">
 
         <nav class=" sticky top-0 p-5 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-800 via-slate-700 to-gray-800 shadow md:flex md:items-center md:justify-between">
@@ -101,7 +75,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Resources</h2>
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline">Geportal</a></li>
@@ -112,7 +86,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Follow us</h2>
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-white">Follow us</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline ">Github</a></li>
@@ -123,7 +97,7 @@
 
                         <div>
 
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Legal</h2>
+                            <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Legal</h2>
 
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4"><a href="#" class="hover:underline">Privacy Policy</a></li>
