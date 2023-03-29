@@ -54,7 +54,7 @@
 
         <div id ='app'>@yield('content')</div>
 
-        <footer class="bg-gray-800 mt-2">
+        <footer class="bg-gray-800">
 
             <div class="mx-auto w-full container p-4 sm:p-6">
 
